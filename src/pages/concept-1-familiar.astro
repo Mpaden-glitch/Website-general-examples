@@ -1,9 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Hero from '../components/Hero.astro';
-import SectionHeading from '../components/SectionHeading.astro';
-import InfoCard from '../components/InfoCard.astro';
-import CTAGroup from '../components/CTAGroup.astro';
 ---
 
 <BaseLayout
@@ -12,123 +8,182 @@ import CTAGroup from '../components/CTAGroup.astro';
   showConceptSwitcher={true}
   activeConcept="familiar"
 >
-  <Hero
-    eyebrow="Concept 1 · Familiar"
-    title="Welcome Home to Limitless Church"
-    text="A warm, approachable homepage direction that keeps newcomer clarity front and center while cleaning up hierarchy and flow."
-    primaryAction={{ label: 'Plan Your Visit', href: '#' }}
-    secondaryAction={{ label: 'Watch a Message', href: '#' }}
-    imageLabel="Sunday worship + lobby hospitality image"
-  />
 
-  <section class="quick-facts">
-    <div class="container facts-grid">
-      <div class="fact">
-        <strong>Sunday Services</strong>
-        9:00 AM + 10:45 AM
-      </div>
-      <div class="fact">
-        <strong>Location</strong>
-        Nixa, Missouri
-      </div>
-      <div class="fact">
-        <strong>First Time Here?</strong>
-        We will help you feel at home.
-      </div>
-      <div class="fact">
-        <strong>For Families</strong>
-        Kids + youth environments available.
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <SectionHeading
-        eyebrow="Your First Sunday"
-        title="What to Expect"
-        text="Simple, clear steps for people who are visiting a church for the first time or returning after a while."
-      />
-      <div class="expect-grid">
-        <article class="panel">
-          <h3>Come As You Are</h3>
-          <p>You do not need to have everything figured out. You are welcome here.</p>
-        </article>
-        <article class="panel">
-          <h3>Friendly Welcome</h3>
-          <p>Our team can help you find parking, kids check-in, and a seat before service.</p>
-        </article>
-        <article class="panel">
-          <h3>Worship + Teaching</h3>
-          <p>Each Sunday includes worship and a practical message rooted in Scripture.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <SectionHeading
-        eyebrow="Community Life"
-        title="Ministries for Every Season"
-        text="From kids to students to adults, we want people to find meaningful connection and growth."
-      />
-      <div class="ministries-grid">
-        <InfoCard
-          title="Kids"
-          text="Safe, engaging spaces where children learn about Jesus in an age-appropriate way."
-          ctaLabel="Explore Kids"
-        />
-        <InfoCard
-          title="Youth"
-          text="A place for students to build faith, friendships, and purpose through real community."
-          ctaLabel="Explore Youth"
-        />
-        <InfoCard
-          title="Groups"
-          text="Midweek groups that help people grow in faith and support each other in daily life."
-          ctaLabel="Find a Group"
-        />
-      </div>
-    </div>
-  </section>
-
-  <section class="mission-band">
-    <div class="container mission-band-inner">
-      <div>
-        <strong>Encounter God</strong>
-        Sunday gatherings and daily spiritual rhythms that point people to Jesus.
-      </div>
-      <div>
-        <strong>Love People</strong>
-        Real relationships, care, and community for every generation.
-      </div>
-      <div>
-        <strong>Find Purpose</strong>
-        Clear next steps to serve, grow, and live on mission in Nixa.
-      </div>
-    </div>
-  </section>
-
-  <section class="leadership">
-    <div class="container leadership-grid">
-      <div class="image-placeholder">Pastor + leadership welcome image</div>
-      <div class="leadership-copy">
-        <h2>A Personal Welcome</h2>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Sundays in Nixa, Missouri</p>
+        <h1>You're Welcome Here,<br>Exactly as You Are</h1>
         <p>
-          We know walking into a church can feel like a big step. Our heart is simple: help people
-          encounter God, love people, and find purpose one step at a time.
+          Limitless Church meets every Sunday morning in Nixa. Bring your questions,
+          your family, your doubt. We're glad you found us.
+        </p>
+        <div class="cta-row">
+          <a class="btn" href="#">Plan Your Visit</a>
+          <a class="btn btn-soft" href="#">Watch a Message</a>
+        </div>
+      </div>
+      <div class="image-placeholder hero-image">Sunday morning welcome + lobby image</div>
+    </div>
+  </section>
+
+  <!-- Service strip -->
+  <div class="strip">
+    <div class="container strip-inner">
+      <span><strong>Sundays</strong> 9:00 AM &amp; 10:45 AM</span>
+      <span><strong>Location</strong> Nixa, Missouri</span>
+      <span><strong>Kids &amp; Youth</strong> Every service</span>
+      <span><strong>Parking</strong> Free &amp; easy</span>
+    </div>
+  </div>
+
+  <!-- What Sunday Looks Like -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Your First Sunday</p>
+        <h2>What to Expect When You Arrive</h2>
+        <span class="accent-bar"></span>
+        <p style="margin-top: 1rem;">
+          We know walking into a church for the first time can feel like a lot.
+          Here's what a Sunday at Limitless actually looks like.
         </p>
       </div>
+
+      <div class="steps-grid stagger">
+        <article class="step-card">
+          <span class="step-num">01</span>
+          <h3>Arrive and Be Welcomed</h3>
+          <p>
+            Our team is outside and in the lobby to help you find parking, drop off
+            your kids, and get settled before the service starts.
+          </p>
+        </article>
+        <article class="step-card">
+          <span class="step-num">02</span>
+          <h3>Experience Sunday Together</h3>
+          <p>
+            Each service includes live worship and a practical, honest message from
+            Scripture. No performance. No pressure. Just come as you are.
+          </p>
+        </article>
+        <article class="step-card">
+          <span class="step-num">03</span>
+          <h3>Find Your Next Step</h3>
+          <p>
+            After the service, our team is around to answer questions, help you find
+            a group, or just say hello. You don't have to figure it out alone.
+          </p>
+        </article>
+      </div>
     </div>
   </section>
 
-  <CTAGroup
-    title="Ready for Sunday?"
-    text="Whether you are new to church or looking for a home church in Nixa, we would love to help you plan your first visit."
-    actions={[
-      { label: 'Plan Your Visit', href: '#' },
-      { label: 'Get Connected', href: '#' }
-    ]}
-  />
+  <!-- Ministries -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Community Life</p>
+        <h2>Ministries for Every Season</h2>
+        <span class="accent-bar"></span>
+        <p style="margin-top: 1rem;">
+          From kids to students to adults, there's a place for everyone at Limitless.
+        </p>
+      </div>
+      <div class="cards-grid stagger">
+        <article class="info-card">
+          <h3>Kids</h3>
+          <p>
+            Safe, fun, age-appropriate environments where children learn that they
+            are known and loved by God.
+          </p>
+          <a href="#">Explore Kids</a>
+        </article>
+        <article class="info-card">
+          <h3>Youth</h3>
+          <p>
+            A real community where students can build faith, honest friendships,
+            and a sense of purpose during some of the best and hardest years.
+          </p>
+          <a href="#">Explore Youth</a>
+        </article>
+        <article class="info-card">
+          <h3>Groups</h3>
+          <p>
+            Midweek small groups that help people slow down, go deeper, and stay
+            connected beyond Sunday mornings.
+          </p>
+          <a href="#">Find a Group</a>
+        </article>
+        <article class="info-card">
+          <h3>Serve</h3>
+          <p>
+            Simple ways to get involved, contribute your gifts, and make a real
+            difference in the church and in Nixa.
+          </p>
+          <a href="#">Start Serving</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission band -->
+  <div class="mission-band">
+    <div class="container mission-band-inner">
+      <div class="mission-pillar">
+        <strong>Encounter God</strong>
+        <p>Sundays, prayer, and everyday rhythms that point people toward Jesus.</p>
+      </div>
+      <div class="mission-pillar">
+        <strong>Love People</strong>
+        <p>Real relationships, generous care, and a culture where no one does life alone.</p>
+      </div>
+      <div class="mission-pillar">
+        <strong>Find Purpose</strong>
+        <p>Clear next steps to grow, serve, and live on mission right here in Nixa.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Leadership welcome -->
+  <section class="leadership">
+    <div class="container leadership-grid">
+      <div class="leadership-copy">
+        <p class="eyebrow">From Our Pastor</p>
+        <h2>A Personal Welcome</h2>
+        <p>
+          Whether this is your first Sunday or you've been searching for a church
+          home for a while, we are genuinely glad you're here. Limitless Church
+          exists to help people in Nixa encounter God, love people around them,
+          and find real purpose — one step at a time.
+        </p>
+        <p>
+          You don't need to have it figured out to walk through our doors. That's
+          the whole point of showing up.
+        </p>
+        <a class="btn btn-soft" href="#" style="margin-top: 0.5rem;">About Our Church</a>
+      </div>
+      <div class="image-placeholder image-tall">Pastor welcome + leadership team image</div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-group section">
+    <div class="container">
+      <div class="cta-panel">
+        <p class="eyebrow">Ready for Sunday?</p>
+        <h2>We'd Love to See You This Week</h2>
+        <p>
+          Whether you're new to church or returning after a long time away,
+          Sunday at Limitless is a great first step. Services at 9:00 AM and 10:45 AM.
+        </p>
+        <div class="cta-row">
+          <a class="btn" href="#">Plan Your Visit</a>
+          <a class="btn btn-soft" href="#">Get Connected</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </BaseLayout>
