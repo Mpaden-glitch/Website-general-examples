@@ -1,0 +1,39 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  pageClass?: string;
+  showConceptSwitcher?: boolean;
+  activeConcept?: 'familiar' | 'elevated' | 'bold';
+}
+
+const {
+  title,
+  description = 'Homepage concept exploration for Limitless Church in Nixa, Missouri.',
+  pageClass = '',
+  showConceptSwitcher = false,
+  activeConcept
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class={pageClass}>
+    <Header showConceptSwitcher={showConceptSwitcher} activeConcept={activeConcept} />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

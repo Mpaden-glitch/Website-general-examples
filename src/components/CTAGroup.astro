@@ -1,0 +1,28 @@
+---
+interface Action {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  title: string;
+  text: string;
+  actions: Action[];
+}
+
+const { title, text, actions } = Astro.props;
+---
+
+<section class="cta-group section">
+  <div class="container cta-panel">
+    <h2>{title}</h2>
+    <p>{text}</p>
+    <div class="cta-row">
+      {actions.map((action, index) => (
+        <a class:list={{ btn: true, 'btn-soft': index > 0 }} href={action.href}>
+          {action.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

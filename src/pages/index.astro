@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+
+const concepts = [
+  {
+    title: 'Concept 1: Familiar',
+    text: 'Closest to the current tone. Welcoming, clear, and conservative in style with stronger hierarchy and cleaner section flow.',
+    href: `${base}concept-1-familiar`
+  },
+  {
+    title: 'Concept 2: Elevated',
+    text: 'A more mature and mission-shaped experience that highlights encounter God, love people, and find purpose in a clearer journey.',
+    href: `${base}concept-2-elevated`
+  },
+  {
+    title: 'Concept 3: Bold',
+    text: 'A more custom and distinct direction with stronger contrast, clearer emotional tone, and a memorable sense of local church identity.',
+    href: `${base}concept-3-bold`
+  }
+];
+---
+
+<BaseLayout
+  title="Limitless Church Homepage Concepts"
+  description="Three strategic homepage design directions for Limitless Church in Nixa, Missouri."
+  pageClass="concept-index"
+>
+  <section class="selector-hero">
+    <div class="container">
+      <p class="eyebrow">Strategy Mockup</p>
+      <h1>Limitless Church Homepage Concepts</h1>
+      <p>
+        These pages are lightweight homepage explorations for one church. Each concept tests how
+        structure, messaging, and imagery treatment can communicate warmth and belonging without a
+        homepage video.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container selector-grid">
+      {concepts.map((concept) => (
+        <article class="concept-card">
+          <h2>{concept.title}</h2>
+          <p>{concept.text}</p>
+          <a class="btn" href={concept.href}>View Concept</a>
+        </article>
+      ))}
+    </div>
+
+    <p class="container selector-note">
+      These concepts intentionally avoid homepage video and instead explore how hierarchy, concise
+      copy, and section rhythm can still communicate welcome and emotional connection.
+    </p>
+  </section>
+</BaseLayout>

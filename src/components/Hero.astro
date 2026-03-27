@@ -1,0 +1,45 @@
+---
+interface Action {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  eyebrow?: string;
+  title: string;
+  text: string;
+  primaryAction: Action;
+  secondaryAction?: Action;
+  imageLabel?: string;
+  center?: boolean;
+}
+
+const {
+  eyebrow,
+  title,
+  text,
+  primaryAction,
+  secondaryAction,
+  imageLabel = 'Community image placeholder',
+  center = false
+} = Astro.props;
+---
+
+<section class:list={{ hero: true, 'hero-center': center }}>
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+      <h1>{title}</h1>
+      <p>{text}</p>
+      <div class="cta-row">
+        <a class="btn" href={primaryAction.href}>{primaryAction.label}</a>
+        {secondaryAction && (
+          <a class="btn btn-soft" href={secondaryAction.href}>
+            {secondaryAction.label}
+          </a>
+        )}
+      </div>
+    </div>
+    <div class="image-placeholder hero-image">{imageLabel}</div>
+  </div>
+</section>

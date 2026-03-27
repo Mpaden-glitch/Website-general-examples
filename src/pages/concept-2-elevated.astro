@@ -1,0 +1,147 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import InfoCard from '../components/InfoCard.astro';
+import CTAGroup from '../components/CTAGroup.astro';
+---
+
+<BaseLayout
+  title="Concept 2: Elevated | Limitless Church"
+  pageClass="concept-elevated"
+  showConceptSwitcher={true}
+  activeConcept="elevated"
+>
+  <Hero
+    eyebrow="Concept 2 · Elevated"
+    title="Encounter God. Love People. Find Purpose."
+    text="A more intentional, mission-shaped homepage direction that keeps warmth while guiding people into a clear next step beyond attendance."
+    primaryAction={{ label: 'Plan Your Visit', href: '#' }}
+    secondaryAction={{ label: 'Learn More', href: '#' }}
+    imageLabel="Sunday worship + prayer moments image"
+  />
+
+  <section class="strip">
+    <div class="container strip-inner">
+      <p><strong>Sundays:</strong> 9:00 AM + 10:45 AM</p>
+      <p><strong>Location:</strong> Nixa, Missouri</p>
+      <p><strong>Atmosphere:</strong> Welcoming, faith-filled, and family-friendly</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Our Mission"
+        title="A Church Journey with Clear Direction"
+        text="This homepage concept gives the mission more visibility so people can see where they fit and where they can grow."
+        center={true}
+      />
+      <div class="mission-grid">
+        <InfoCard
+          title="Encounter God"
+          text="Through worship, teaching, prayer, and Scripture, we invite people into a real relationship with Jesus."
+          ctaLabel="Explore Sundays"
+        />
+        <InfoCard
+          title="Love People"
+          text="Community happens in groups, teams, and everyday care where no one has to do life alone."
+          ctaLabel="Find Community"
+        />
+        <InfoCard
+          title="Find Purpose"
+          text="Serving pathways and growth steps help people discover how God has uniquely wired them."
+          ctaLabel="Take a Next Step"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split-grid">
+      <div>
+        <SectionHeading
+          eyebrow="First Visit"
+          title="What Sunday Feels Like"
+          text="Expect friendly people, practical teaching, and a church environment where you can show up as you are."
+        />
+        <div class="cta-row">
+          <a class="btn" href="#">Plan Your Visit</a>
+          <a class="btn btn-soft" href="#">FAQ</a>
+        </div>
+      </div>
+      <div class="image-placeholder">First-time guest experience image</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Pathways"
+        title="Community, Family, and Growth"
+        text="A clearer map for people to move from attending to belonging and serving."
+      />
+      <div class="pathway-grid">
+        <article class="panel">
+          <h3>Kids + Youth</h3>
+          <p>Consistent environments where the next generation learns and grows in faith.</p>
+          <a href="#">Explore Next Gen</a>
+        </article>
+        <article class="panel">
+          <h3>Groups</h3>
+          <p>Meaningful relationships that help people stay encouraged and spiritually grounded.</p>
+          <a href="#">Join a Group</a>
+        </article>
+        <article class="panel">
+          <h3>Serve Teams</h3>
+          <p>Practical opportunities to serve the church and love the city with purpose.</p>
+          <a href="#">Start Serving</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="leadership">
+    <div class="container leadership-grid">
+      <div class="leadership-copy">
+        <h2>Leadership with a Pastoral Heart</h2>
+        <p>
+          This concept positions leadership as relational and present, reinforcing trust for new
+          visitors while grounding the mission in real local church life.
+        </p>
+      </div>
+      <div class="image-placeholder">Pastor welcome + team image</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Grow in Faith"
+        title="Messages and Spiritual Growth"
+        text="A short preview section that points people to teaching and discipleship without crowding the page."
+      />
+      <div class="message-preview">
+        <article class="message-card">
+          <h3>Watch a Recent Message</h3>
+          <p>Catch up on current teaching and get a feel for Sunday at Limitless Church.</p>
+          <a href="#">Watch Messages</a>
+        </article>
+        <article class="message-card">
+          <h3>Explore Next Steps</h3>
+          <p>Find practical ways to grow in faith, community, and purpose throughout the week.</p>
+          <a href="#">Learn More</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <CTAGroup
+    title="Take the Next Step This Week"
+    text="Come visit, meet people, and discover a church community that helps you encounter God, love people, and find purpose."
+    actions={[
+      { label: 'Plan Your Visit', href: '#' },
+      { label: 'Get Connected', href: '#' }
+    ]}
+  />
+</BaseLayout>

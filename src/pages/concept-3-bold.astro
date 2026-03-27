@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import InfoCard from '../components/InfoCard.astro';
+import CTAGroup from '../components/CTAGroup.astro';
+---
+
+<BaseLayout
+  title="Concept 3: Bold | Limitless Church"
+  pageClass="concept-bold"
+  showConceptSwitcher={true}
+  activeConcept="bold"
+>
+  <Hero
+    eyebrow="Concept 3 · Bold"
+    title="A Church for Real People in Real Life"
+    text="A more distinctive homepage direction that keeps the welcome clear while adding stronger visual personality and memorable section composition."
+    primaryAction={{ label: 'Plan Your Visit', href: '#' }}
+    secondaryAction={{ label: 'Get Connected', href: '#' }}
+    imageLabel="People gathering, worship, and community image"
+  />
+
+  <section class="belong-band">
+    <div class="container belong-shell">
+      <div>
+        <p class="eyebrow">You Belong Here</p>
+        <h2>Come as You Are, Not as You Think You Should Be</h2>
+        <p>
+          We want people in Nixa to feel welcomed from the first click to the first Sunday. This
+          section creates emotional clarity without relying on video.
+        </p>
+      </div>
+      <div class="image-placeholder">Lobby welcome + hospitality image</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Mission Journey"
+        title="A Clear Path: Encounter, Love, Purpose"
+        text="Instead of generic homepage modules, this direction frames the mission as a practical journey people can step into now."
+      />
+      <div class="journey-grid">
+        <article class="journey-step">
+          <h3>Encounter God</h3>
+          <p>Experience worship, Scripture, and prayer that invite people to know Jesus personally.</p>
+        </article>
+        <article class="journey-step">
+          <h3>Love People</h3>
+          <p>Build authentic relationships through groups, care, and a church culture of hospitality.</p>
+        </article>
+        <article class="journey-step">
+          <h3>Find Purpose</h3>
+          <p>Discover gifts, serve others, and live your faith with impact in daily life.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="paired-panels">
+        <article class="panel">
+          <p class="eyebrow">First Visit</p>
+          <h3>Know What to Expect on Sunday</h3>
+          <p>
+            Service times, kids check-in, and parking details are easy to find so guests can arrive
+            with confidence.
+          </p>
+          <a href="#">Plan Your Visit</a>
+        </article>
+        <article class="panel">
+          <p class="eyebrow">Next Steps</p>
+          <h3>Move Beyond Attendance</h3>
+          <p>
+            From groups to serving to spiritual growth, this concept makes next steps visible and
+            immediate.
+          </p>
+          <a href="#">Explore Next Steps</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Pathways"
+        title="Grow, Serve, and Build Community"
+        text="These pathways are designed to feel practical and local, not abstract or overly polished."
+      />
+      <div class="ministries-grid">
+        <InfoCard
+          title="Kids + Youth"
+          text="Next generation ministries that are safe, faith-forming, and full of encouragement."
+          ctaLabel="Explore Next Gen"
+        />
+        <InfoCard
+          title="Groups + Care"
+          text="Life is better in community. Groups help people stay connected through every season."
+          ctaLabel="Join a Group"
+        />
+        <InfoCard
+          title="Serve + Outreach"
+          text="Simple pathways to serve the church, love neighbors, and make a real local difference."
+          ctaLabel="Start Serving"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="leadership">
+    <div class="container split-grid">
+      <div class="image-placeholder">Nixa local church life + leadership image</div>
+      <div>
+        <p class="eyebrow">Local Church Identity</p>
+        <h2>One Church, Rooted in Nixa</h2>
+        <p>
+          Bold does not mean distant. This direction keeps leadership approachable and reinforces a
+          real sense of place, people, and pastoral care.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CTAGroup
+    title="Ready to Call Limitless Church Home?"
+    text="Bring your questions, bring your family, and take a next step with a community that wants to help you encounter God, love people, and find purpose."
+    actions={[
+      { label: 'Plan Your Visit', href: '#' },
+      { label: 'Watch a Message', href: '#' }
+    ]}
+  />
+</BaseLayout>
