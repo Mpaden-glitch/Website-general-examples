@@ -1,0 +1,219 @@
+---
+interface Props {
+  id?: string;
+  index: number;
+  name: string;
+  summary: string;
+  emphasis: string;
+  idealUse: string;
+  tone: string;
+  bestFit: string;
+  heroApproach: string;
+  ctaStyle: string;
+  visualFeel: string;
+  previewPattern:
+    | 'high-contrast'
+    | 'airy'
+    | 'earth'
+    | 'mission'
+    | 'story'
+    | 'hub'
+    | 'nextgen';
+  previewHeadline: string;
+  previewSupport: string;
+  toneClass: 'contrast' | 'airy' | 'earth' | 'mission' | 'story' | 'hub' | 'nextgen';
+  ctaLabel?: string;
+}
+
+const {
+  id,
+  index,
+  name,
+  summary,
+  emphasis,
+  idealUse,
+  tone,
+  bestFit,
+  heroApproach,
+  ctaStyle,
+  visualFeel,
+  previewPattern,
+  previewHeadline,
+  previewSupport,
+  toneClass,
+  ctaLabel = 'Placeholder CTA'
+} = Astro.props;
+---
+
+<article id={id} class:list={['strategy-block', `strategy-tone-${toneClass}`]}>
+  <div class="strategy-block__content">
+    <p class="eyebrow">Direction {String(index).padStart(2, '0')}</p>
+    <h2>{name}</h2>
+    <p class="strategy-block__summary">{summary}</p>
+
+    <h3>What it emphasizes</h3>
+    <p class="strategy-block__text">{emphasis}</p>
+
+    <h3>Ideal use case</h3>
+    <p class="strategy-block__text">{idealUse}</p>
+
+    <dl class="strategy-meta">
+      <div>
+        <dt>Tone</dt>
+        <dd>{tone}</dd>
+      </div>
+      <div>
+        <dt>Best fit</dt>
+        <dd>{bestFit}</dd>
+      </div>
+      <div>
+        <dt>Hero approach</dt>
+        <dd>{heroApproach}</dd>
+      </div>
+      <div>
+        <dt>CTA style</dt>
+        <dd>{ctaStyle}</dd>
+      </div>
+      <div>
+        <dt>Visual feel</dt>
+        <dd>{visualFeel}</dd>
+      </div>
+    </dl>
+
+    {ctaLabel && (
+      <a class="btn btn-soft strategy-block__cta" href="#">
+        {ctaLabel}
+      </a>
+    )}
+  </div>
+
+  <div
+    class:list={['strategy-preview', `strategy-preview--${previewPattern}`]}
+    role="img"
+    aria-label={`${name} visual strategy preview panel`}
+  >
+    {
+      previewPattern === 'high-contrast' && (
+        <>
+          <div class="preview-high-nav">
+            <span>Mission</span>
+            <span>Visit</span>
+            <span>Contact</span>
+          </div>
+          <div class="preview-high-hero">
+            <p class="preview-eyebrow">Clarity First</p>
+            <p class="preview-headline">{previewHeadline}</p>
+            <p class="preview-support">{previewSupport}</p>
+            <span class="preview-chip">Get Started</span>
+          </div>
+        </>
+      )
+    }
+
+    {
+      previewPattern === 'airy' && (
+        <>
+          <div class="preview-airy-shell">
+            <p class="preview-eyebrow">Welcome</p>
+            <p class="preview-headline">{previewHeadline}</p>
+            <p class="preview-support">{previewSupport}</p>
+            <div class="preview-airy-actions">
+              <span class="preview-chip">Learn More</span>
+              <span class="preview-chip">Visit Us</span>
+            </div>
+          </div>
+          <div class="preview-airy-band" aria-hidden="true"></div>
+        </>
+      )
+    }
+
+    {
+      previewPattern === 'earth' && (
+        <>
+          <div class="preview-earth-hero">
+            <p class="preview-eyebrow">Grounded Presence</p>
+            <p class="preview-headline">{previewHeadline}</p>
+            <p class="preview-support">{previewSupport}</p>
+          </div>
+          <div class="preview-earth-cards">
+            <div class="preview-card">Community Care</div>
+            <div class="preview-card">Programs</div>
+            <div class="preview-card">Stories</div>
+          </div>
+        </>
+      )
+    }
+
+    {
+      previewPattern === 'mission' && (
+        <>
+          <div class="preview-mission-copy">
+            <p class="preview-eyebrow">Action Focus</p>
+            <p class="preview-headline">{previewHeadline}</p>
+            <p class="preview-support">{previewSupport}</p>
+            <span class="preview-chip">Take the Next Step</span>
+          </div>
+          <div class="preview-mission-stack">
+            <div class="preview-card">Visit</div>
+            <div class="preview-card">Join</div>
+            <div class="preview-card">Give</div>
+            <div class="preview-card">Serve</div>
+          </div>
+        </>
+      )
+    }
+
+    {
+      previewPattern === 'story' && (
+        <>
+          <div class="preview-story-hero">
+            <p class="preview-eyebrow">Journey</p>
+            <p class="preview-headline">{previewHeadline}</p>
+            <p class="preview-support">{previewSupport}</p>
+          </div>
+          <div class="preview-story-flow">
+            <span>Beginning</span>
+            <span>Growth</span>
+            <span>Impact</span>
+          </div>
+        </>
+      )
+    }
+
+    {
+      previewPattern === 'hub' && (
+        <>
+          <div class="preview-hub-nav">
+            <span>Resources</span>
+            <span>Events</span>
+            <span>Updates</span>
+            <span>Support</span>
+          </div>
+          <div class="preview-hub-grid">
+            <div class="preview-card">Latest Message</div>
+            <div class="preview-card">Weekly Update</div>
+            <div class="preview-card">Family Resources</div>
+            <div class="preview-card">Upcoming Events</div>
+          </div>
+        </>
+      )
+    }
+
+    {
+      previewPattern === 'nextgen' && (
+        <>
+          <div class="preview-nextgen-hero">
+            <p class="preview-eyebrow">Momentum</p>
+            <p class="preview-headline">{previewHeadline}</p>
+            <p class="preview-support">{previewSupport}</p>
+          </div>
+          <div class="preview-nextgen-layers" aria-hidden="true">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </>
+      )
+    }
+  </div>
+</article>

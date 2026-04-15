@@ -1,231 +1,81 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
-  title="Concept 2: Elevated | Limitless Church"
+  title="Direction Study: Grounded / Earth-Toned"
+  description="A grounded and earth-toned homepage direction study for mission-driven organizations."
   pageClass="concept-elevated"
   showConceptSwitcher={true}
   activeConcept="elevated"
 >
-
-  <!-- Hero — mission statement as headline, centered, editorial -->
-  <section class="hero hero-center">
-    <div class="container hero-grid" style="grid-template-columns: 1fr; max-width: 800px;">
-      <div class="hero-copy" style="text-align: center; margin-inline: auto;">
-        <p class="eyebrow">Limitless Church · Nixa, Missouri</p>
-        <h1>Encounter God.<br>Love People.<br>Find Purpose.</h1>
-        <p style="margin-inline: auto;">
-          A church in Nixa, Missouri where you can take a real next step —
-          no matter where you're starting from.
-        </p>
-        <div class="cta-row" style="justify-content: center;">
-          <a class="btn" href="#">Plan Your Visit</a>
-          <a class="btn btn-soft" href="#">Our Story</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Service strip -->
-  <div class="strip">
-    <div class="container strip-inner">
-      <span><strong>Sundays:</strong> 9:00 AM &amp; 10:45 AM</span>
-      <span><strong>Location:</strong> Nixa, Missouri</span>
-      <span><strong>Atmosphere:</strong> Welcoming, faith-filled, and family-friendly</span>
-    </div>
-  </div>
-
-  <!-- Mission pillars -->
-  <section class="section">
-    <div class="container">
-      <div class="section-heading center">
-        <p class="eyebrow">Our Mission</p>
-        <h2>Three Invitations, One Journey</h2>
-        <span class="accent-bar" style="margin-inline: auto;"></span>
-        <p style="margin-top: 1rem;">
-          Our mission isn't a slogan, it is a practical framework for how people
-          move from attending to truly belonging.
-        </p>
-      </div>
-
-      <div class="pillars-grid stagger">
-        <article class="pillar-card pillar-encounter">
-          <h3>Encounter God</h3>
-          <p>
-            Through worship, honest teaching, and space to pray, we believe a real
-            relationship with Jesus is available to anyone who seeks it. Sunday is
-            where that starts.
-          </p>
-          <a href="#">About Sundays</a>
-        </article>
-        <article class="pillar-card pillar-love">
-          <h3>Love People</h3>
-          <p>
-            Community isn't a program — it's what happens when people choose to show
-            up for each other. Groups, care teams, and everyday hospitality make it
-            possible to do life together.
-          </p>
-          <a href="#">Find Community</a>
-        </article>
-        <article class="pillar-card pillar-purpose">
-          <h3>Find Purpose</h3>
-          <p>
-            Everyone has gifts. Serve teams, growth tracks, and next step pathways
-            help people discover how God has wired them, and put it to work right here
-            in Nixa.
-          </p>
-          <a href="#">Take a Next Step</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- What Sunday Feels Like -->
-  <section class="section" style="padding-top: 0;">
-    <div class="container split-grid">
-      <div>
-        <p class="eyebrow">First Visit</p>
-        <h2>What Sunday Actually Feels Like</h2>
-        <span class="accent-bar"></span>
-        <p style="margin-top: 1.2rem; margin-bottom: 1.2rem;">
-          Expect friendly people, a comfortable environment, and a message that doesn't
-          talk down to you. You'll find kids checked in, a seat saved, and a team
-          that's genuinely glad you came.
-        </p>
-        <blockquote>
-          "We don't want people to come to church. We want people to find a community
-          that helps them live differently the other six days of the week."
-        </blockquote>
-        <div class="cta-row" style="margin-top: 1.2rem;">
-          <a class="btn" href="#">Plan Your Visit</a>
-          <a class="btn btn-soft" href="#">First Visit FAQ</a>
-        </div>
-      </div>
-      <div class="image-placeholder image-tall">Sunday morning experience image</div>
-    </div>
-  </section>
-
-  <!-- Next step pathway -->
-  <section class="section" style="padding-top: 0;">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">The Journey</p>
-        <h2>From First Visit to Fully Engaged</h2>
-        <span class="accent-bar"></span>
-        <p style="margin-top: 1rem;">
-          We don't want people stuck in the back row. Here's a simple map for what
-          it looks like to move from newcomer to community member.
-        </p>
-      </div>
-
-      <div class="pathway-steps">
-        <div class="pathway-step">
-          <span class="pathway-step-num">1</span>
-          <h4>Attend</h4>
-          <p>Show up on a Sunday. That's all it takes to start.</p>
-        </div>
-        <div class="pathway-step">
-          <span class="pathway-step-num">2</span>
-          <h4>Connect</h4>
-          <p>Meet people. Find a group. Stay for coffee after service.</p>
-        </div>
-        <div class="pathway-step">
-          <span class="pathway-step-num">3</span>
-          <h4>Grow</h4>
-          <p>Go deeper in faith through groups, teaching, and prayer.</p>
-        </div>
-        <div class="pathway-step">
-          <span class="pathway-step-num">4</span>
-          <h4>Serve</h4>
-          <p>Put your gifts to work and contribute to something bigger.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Weekly essentials -->
-  <section class="section" style="padding-top: 0;">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">This Week at Limitless</p>
-        <h2>Sermons, Kids, Events, and Your First Visit</h2>
-        <span class="accent-bar"></span>
-        <p style="margin-top: 1rem;">
-          A clear set of next steps for anyone who wants to explore church life at their own pace.
-        </p>
-      </div>
-      <div class="message-preview stagger">
-        <article class="message-card">
-          <h3>Sermons</h3>
-          <p>
-            Every Sunday message is available online if you want to hear the teaching voice before visiting.
-          </p>
-          <a href="#">Watch Sermons</a>
-        </article>
-        <article class="message-card">
-          <h3>Kids Ministry</h3>
-          <p>
-            Children are welcomed into safe and age-appropriate environments during every service.
-          </p>
-          <a href="#">Explore Kids</a>
-        </article>
-        <article class="message-card">
-          <h3>Upcoming Events</h3>
-          <p>
-            From gatherings to community nights, events are a simple way to meet people and stay connected.
-          </p>
-          <a href="#">View Events</a>
-        </article>
-        <article class="message-card">
-          <h3>Plan Your Visit</h3>
-          <p>
-            Let our team know you're coming and we will make your first Sunday feel clear and comfortable.
-          </p>
-          <a href="#">Start Planning</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Leadership — pastoral, relational -->
-  <section class="leadership">
-    <div class="container leadership-grid">
-      <div class="image-placeholder image-tall">Pastor + leadership welcome image</div>
-      <div class="leadership-copy">
-        <p class="eyebrow">Pastoral Heart</p>
-        <h2>Leadership That Stays Present</h2>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Direction Study</p>
+        <h1>Grounded / Earth-Toned</h1>
         <p>
-          Limitless Church is led by a team that believes in being present —
-          in the community, in the lobby after service, and in the everyday
-          moments that matter most to people.
-        </p>
-        <p>
-          We're not trying to build something impressive. We're trying to build
-          something real.
-        </p>
-        <a class="btn btn-soft" href="#" style="margin-top: 0.5rem;">Meet the Team</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-group section">
-    <div class="container">
-      <div class="cta-panel">
-        <p class="eyebrow">Take the Next Step</p>
-        <h2>Come This Sunday</h2>
-        <p>
-          Whether you're new to faith, returning to church, or looking for a community
-          to call home — we'd love to have you join us in Nixa.
-          Services at 9:00 AM and 10:45 AM.
+          This direction emphasizes trust, steadiness, and long-term credibility. It uses warmer neutrals,
+          measured hierarchy, and narrative pacing to communicate maturity and depth.
         </p>
         <div class="cta-row">
-          <a class="btn" href="#">Plan Your Visit</a>
-          <a class="btn btn-soft" href="#">Get Connected</a>
+          <a class="btn" href={`${base}website-strategy-catalog#grounded-earth`}>View in Catalog</a>
+          <a class="btn btn-soft" href={`${base}website-strategy-catalog#decision-framework`}>Use Decision Framework</a>
         </div>
+      </div>
+      <div class="image-placeholder hero-image">Layered hero with grounded surfaces and slower visual rhythm</div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Design Notes</p>
+        <h2>What This Direction Prioritizes</h2>
+        <span class="accent-bar"></span>
+      </div>
+      <div class="pillars-grid stagger">
+        <article class="pillar-card">
+          <h3>Tone</h3>
+          <p>Thoughtful, reliable, and grounded. Messaging supports confidence over urgency.</p>
+        </article>
+        <article class="pillar-card">
+          <h3>Hero Style</h3>
+          <p>Split or narrative-led hero with supporting context blocks and restrained typography.</p>
+        </article>
+        <article class="pillar-card">
+          <h3>Best Fit</h3>
+          <p>Organizations that need to signal trust, care, and long-term commitment.</p>
+        </article>
       </div>
     </div>
   </section>
 
+  <section class="section" style="padding-top: 0;">
+    <div class="container concept-study-panel concept-study-panel--earth">
+      <div>
+        <p class="eyebrow">Sample Composition</p>
+        <h2>Homepage Slice</h2>
+        <p>
+          This study combines a narrative hero block with structured content rows. The goal is to help visitors feel
+          both emotionally reassured and practically informed.
+        </p>
+      </div>
+      <div class="concept-study-preview" role="img" aria-label="Grounded concept homepage composition preview">
+        <div class="preview-split">
+          <div class="preview-split__copy">
+            <p class="preview-eyebrow">Steady Presence</p>
+            <p class="preview-headline">Built for Trust, Not Noise</p>
+            <p class="preview-support">Measured storytelling with clear informational flow.</p>
+          </div>
+          <div class="preview-split__surface" aria-hidden="true"></div>
+        </div>
+        <div class="preview-row preview-row--two">
+          <div class="preview-card">Programs</div>
+          <div class="preview-card">Support Paths</div>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

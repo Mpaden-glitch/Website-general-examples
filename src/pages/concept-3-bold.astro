@@ -1,261 +1,80 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
-  title="Concept 3: Bold | Limitless Church"
+  title="Direction Study: Raw Contrast / High Contrast Modern"
+  description="A raw contrast and high-contrast modern homepage direction study for mission-driven organizations."
   pageClass="concept-bold"
   showConceptSwitcher={true}
   activeConcept="bold"
 >
-
-  <!-- Welcome band -->
   <section class="welcome-band">
     <div class="container welcome-band-inner">
-      <p class="eyebrow">Limitless Church · Nixa, Missouri</p>
-      <h1>Encounter God.<br>Love People.<br>Find Purpose.</h1>
+      <p class="eyebrow">Direction Study</p>
+      <h1>Raw Contrast / High Contrast Modern</h1>
       <p>
-        Belonging isn't something you earn here. It's the starting point.
-        Come with your questions, your mess, your family, or just yourself.
-        Sunday is open, and we'd love to meet you.
+        This direction leads with decisive hierarchy, high contrast, and direct messaging. It is designed for teams
+        that need immediate clarity and stronger momentum toward next steps.
       </p>
       <div class="cta-row">
-        <a class="btn" href="#">Plan Your Visit</a>
-        <a class="btn btn-soft" href="#">Watch a Message</a>
+        <a class="btn" href={`${base}website-strategy-catalog#raw-contrast`}>View in Catalog</a>
+        <a class="btn btn-soft" href={`${base}website-strategy-catalog#decision-framework`}>Use Decision Framework</a>
       </div>
     </div>
   </section>
 
-  <!-- Sunday at a Glance -->
-  <div class="sunday-bar">
-    <div class="container sunday-bar-inner">
-      <div class="sunday-stat">
-        <span class="sunday-stat-value">9:00</span>
-        <span class="sunday-stat-label">First Service</span>
-      </div>
-      <div class="sunday-stat">
-        <span class="sunday-stat-value">10:45</span>
-        <span class="sunday-stat-label">Second Service</span>
-      </div>
-      <div class="sunday-stat">
-        <span class="sunday-stat-value">Nixa, MO</span>
-        <span class="sunday-stat-label">Location</span>
-      </div>
-      <div class="sunday-stat">
-        <span class="sunday-stat-value">All Ages</span>
-        <span class="sunday-stat-label">Kids &amp; Youth</span>
-      </div>
-      <div class="sunday-stat">
-        <span class="sunday-stat-value">Free</span>
-        <span class="sunday-stat-label">Parking Always</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow">A Real Church</p>
-        <h1>Real People.<br>Real Hope.</h1>
-        <p>
-          We're not trying to be the biggest church in Springfield or the coolest
-          church on the internet. We're committed to being a real, present community
-          for people in Nixa, Missouri.
-        </p>
-        <div class="cta-row">
-          <a class="btn" href="#">Come This Sunday</a>
-        </div>
-      </div>
-      <div class="image-placeholder hero-image">People gathering outside — real community image</div>
-    </div>
-  </section>
-
-  <!-- Mission Journey -->
   <section class="section">
     <div class="container">
       <div class="section-heading">
-        <p class="eyebrow">Mission</p>
-        <h2>Encounter. Love. Purpose.</h2>
+        <p class="eyebrow">Design Notes</p>
+        <h2>What This Direction Prioritizes</h2>
         <span class="accent-bar"></span>
-        <p style="margin-top: 1rem;">
-          Three words we take seriously. Not as a tagline — as an actual
-          framework for how we live and grow together.
-        </p>
       </div>
-
       <div class="journey-grid">
         <article class="journey-step">
           <span class="journey-step-num">01</span>
-          <h3>Encounter God</h3>
-          <p>
-            Sundays at Limitless aren't a performance. They're an invitation — to
-            worship, to hear Scripture taught plainly, and to experience something
-            real. We believe God shows up when people show up together.
-          </p>
+          <h3>Tone</h3>
+          <p>Direct, clear, and confident. Minimal decorative noise.</p>
         </article>
         <article class="journey-step">
           <span class="journey-step-num">02</span>
-          <h3>Love People</h3>
-          <p>
-            This church is built on people choosing each other — in groups, in
-            care, in everyday generosity. Community isn't what happens after service.
-            It's the whole point.
-          </p>
+          <h3>Hero Style</h3>
+          <p>Headline-first with short support copy and one obvious action path.</p>
         </article>
         <article class="journey-step">
           <span class="journey-step-num">03</span>
-          <h3>Find Purpose</h3>
-          <p>
-            Everyone has something to contribute. Serve teams, growth paths, and
-            next steps exist to help people find their place and put their gifts
-            to work in a way that actually matters.
-          </p>
+          <h3>Best Fit</h3>
+          <p>Organizations prioritizing immediate clarity, action, and modern confidence.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- Weekly essentials -->
   <section class="section" style="padding-top: 0;">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">Take a Step This Week</p>
-        <h2>Plan Visit, Kids, Events, Sermons</h2>
-        <span class="accent-bar"></span>
-        <p style="margin-top: 1rem;">
-          You do not need to figure everything out before showing up. Start with one clear step.
-        </p>
-      </div>
-      <div class="cards-grid stagger">
-        <article class="info-card">
-          <h3>Plan Your Visit</h3>
-          <p>Let us know you're coming and we will help make your first Sunday simple from the moment you arrive.</p>
-          <a href="#">Plan Now</a>
-        </article>
-        <article class="info-card">
-          <h3>Kids</h3>
-          <p>Kids environments are open every service with trusted leaders and age-appropriate teaching.</p>
-          <a href="#">Explore Kids</a>
-        </article>
-        <article class="info-card">
-          <h3>Events</h3>
-          <p>See upcoming gatherings, community nights, and opportunities to connect outside of Sunday service.</p>
-          <a href="#">See Events</a>
-        </article>
-        <article class="info-card">
-          <h3>Sermons</h3>
-          <p>Watch recent messages and hear what gets taught before you ever walk through the doors.</p>
-          <a href="#">Watch Sermons</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Community life -->
-  <section class="section" style="padding-top: 0;">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">Community Life</p>
-        <h2>What Keeps People Coming Back</h2>
-        <span class="accent-bar"></span>
-      </div>
-
-      <div class="split-grid" style="margin-bottom: 2rem;">
-        <div>
-          <p class="eyebrow" style="margin-bottom: 0.5rem;">Kids &amp; Youth</p>
-          <h3 style="font-size: clamp(1.2rem, 2.5vw, 1.8rem); margin-bottom: 0.75rem;">The Next Generation Actually Belongs Here</h3>
-          <p style="color: var(--text-soft); line-height: 1.65; margin-bottom: 1rem; font-size: 0.97rem;">
-            Kids church and student ministry aren't holding tanks while adults do the
-            real stuff. They're environments designed to help the next generation
-            encounter God in ways that make sense for them.
-          </p>
-          <a class="btn btn-soft" href="#">Explore Next Gen</a>
-        </div>
-        <div class="image-placeholder image-tall">Kids &amp; youth ministry image</div>
-      </div>
-
-      <div class="split-grid" style="direction: ltr;">
-        <div class="image-placeholder image-tall">Small group community image</div>
-        <div>
-          <p class="eyebrow" style="margin-bottom: 0.5rem;">Groups &amp; Community</p>
-          <h3 style="font-size: clamp(1.2rem, 2.5vw, 1.8rem); margin-bottom: 0.75rem;">Smaller Groups Make the Church Feel Human</h3>
-          <p style="color: var(--text-soft); line-height: 1.65; margin-bottom: 1rem; font-size: 0.97rem;">
-            A church of hundreds still needs the intimacy of twelve. Midweek groups
-            are where people stop being faces in the crowd and start being
-            people who are known.
-          </p>
-          <a class="btn btn-soft" href="#">Find a Group</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Community facts — stated truths, not generic testimonials -->
-  <div class="community-facts">
-    <div class="container community-facts-inner">
-      <div class="community-fact-item">
-        <strong>10+</strong>
-        <span>Years rooted in Nixa and the surrounding community</span>
-      </div>
-      <div class="community-fact-item">
-        <strong>Every Sunday</strong>
-        <span>Two services, kids environments, and a team glad to see you</span>
-      </div>
-      <div class="community-fact-item">
-        <strong>No Script</strong>
-        <span>No pressure to perform, give, or have answers before you're ready</span>
-      </div>
-      <div class="community-fact-item">
-        <strong>Real People</strong>
-        <span>A congregation made up of families, singles, skeptics, and seekers</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Local identity -->
-  <section class="local-band">
-    <div class="container">
-      <div class="local-shell">
-        <div>
-          <p class="eyebrow">One Church, One City</p>
-          <h2>Rooted in Nixa, Missouri</h2>
-          <p>
-            We're not trying to be everywhere. We're committed to Nixa. That means
-            knowing our neighbors, caring about local schools and families, and
-            building something that matters to this specific city — not just the
-            internet version of church.
-          </p>
-          <p>
-            When you show up at Limitless, you're joining something that belongs
-            to this place.
-          </p>
-          <div class="cta-row" style="margin-top: 0.5rem;">
-            <a class="btn btn-soft" href="#">About Our Church</a>
-          </div>
-        </div>
-        <div class="image-placeholder image-tall">Nixa community + local church life image</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA — bold, assertive copy -->
-  <section class="cta-group section">
-    <div class="container">
-      <div class="cta-panel">
-        <p class="eyebrow">You're Invited</p>
-        <h2>Come See for Yourself This Sunday</h2>
+    <div class="container concept-study-panel concept-study-panel--contrast">
+      <div>
+        <p class="eyebrow">Sample Composition</p>
+        <h2>Homepage Slice</h2>
         <p>
-          Bring your questions. Bring your family. Bring your skepticism.
-          We're not asking you to believe anything before you walk in.
-          Just come. Services at 9:00 AM and 10:45 AM in Nixa.
+          The contrast system allows visitors to scan quickly and understand what to do next. Section rhythm is tight,
+          typography is assertive, and calls to action are visually unambiguous.
         </p>
-        <div class="cta-row">
-          <a class="btn" href="#">Plan Your Visit</a>
-          <a class="btn btn-soft" href="#">Watch a Message First</a>
+      </div>
+      <div class="concept-study-preview" role="img" aria-label="Raw contrast concept homepage composition preview">
+        <div class="preview-contrast-nav">
+          <span>Mission</span>
+          <span>Pathways</span>
+          <span>Action</span>
+        </div>
+        <div class="preview-hero preview-hero--left">
+          <p class="preview-eyebrow">Clarity First</p>
+          <p class="preview-headline">Say Less, Guide Better</p>
+          <p class="preview-support">Fast comprehension with direct next-step structure.</p>
+          <span class="preview-chip">Take the Next Step</span>
         </div>
       </div>
     </div>
   </section>
-
 </BaseLayout>

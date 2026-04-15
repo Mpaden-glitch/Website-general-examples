@@ -1,19 +1,21 @@
-# Limitless Church Homepage Concepts (Astro)
+# Website Strategy Showcase (Astro)
 
-A lightweight strategy mockup site for exploring three different homepage directions for **Limitless Church** (Nixa, Missouri).
+A brand-neutral strategy showcase for exploring homepage directions for churches, ministries,
+nonprofits, schools, and other mission-driven organizations.
 
 This project is intentionally:
 - static and fast
 - mobile-friendly
-- video-free on the homepage
-- built for presentation and discussion (not a production rebuild)
+- built as a discovery and strategy tool
+- focused on direction comparison, not a live organizational site
 
-## Concept Pages
+## Pages
 
-- `/` - Concept selector and explainer
-- `/concept-1-familiar` - Familiar direction (warm, safe, clearer hierarchy)
-- `/concept-2-elevated` - Elevated direction (mission-shaped storytelling)
-- `/concept-3-bold` - Bold direction (distinct, modern, still pastoral)
+- `/` - Homepage concept overview with three immersive direction studies
+- `/website-strategy-catalog` - Expanded strategic catalog and decision framework
+- `/concept-1-familiar` - Warm / Grace-Filled direction study
+- `/concept-2-elevated` - Grounded / Earth-Toned direction study
+- `/concept-3-bold` - Raw Contrast / High Contrast Modern direction study
 
 ## Local Development
 
@@ -33,42 +35,24 @@ npm run preview
 
 Build output is generated in `dist/`.
 
-## GitHub Pages Deployment Notes
+## Cloudflare / Static Deployment
 
-This project is configured for static output in `astro.config.mjs` and includes automatic base-path logic for GitHub Actions:
-
-- If deployed as a **project site** (`username.github.io/repo-name`), base defaults to `/<repo-name>/`.
-- If deployed as a **user/org site** (`username.github.io`), base defaults to `/`.
-
-You can override explicitly with environment variables:
-
-- `SITE` (example: `https://yourname.github.io`)
-- `BASE` (example: `/your-repo/`)
-
-### Example GitHub Actions build step
-
-```bash
-npm ci
-npm run build
-```
-
-Publish the `dist/` folder to GitHub Pages via your preferred workflow.
+This project uses Astro static output and is deployment-safe for static hosts including Cloudflare Pages.
 
 ## Project Structure
 
 ```text
 src/
   components/
-    CTAGroup.astro
+    catalog/
+      StrategyBlock.astro
     Footer.astro
     Header.astro
-    Hero.astro
-    InfoCard.astro
-    SectionHeading.astro
   layouts/
     BaseLayout.astro
   pages/
     index.astro
+    website-strategy-catalog.astro
     concept-1-familiar.astro
     concept-2-elevated.astro
     concept-3-bold.astro
