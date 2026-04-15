@@ -22,7 +22,6 @@ interface Props {
   previewHeadline: string;
   previewSupport: string;
   toneClass: 'contrast' | 'airy' | 'earth' | 'mission' | 'story' | 'hub' | 'nextgen';
-  ctaLabel?: string;
 }
 
 const {
@@ -40,8 +39,7 @@ const {
   previewPattern,
   previewHeadline,
   previewSupport,
-  toneClass,
-  ctaLabel = 'Placeholder CTA'
+  toneClass
 } = Astro.props;
 ---
 
@@ -80,11 +78,6 @@ const {
       </div>
     </dl>
 
-    {ctaLabel && (
-      <a class="btn btn-soft strategy-block__cta" href="#">
-        {ctaLabel}
-      </a>
-    )}
   </div>
 
   <div
