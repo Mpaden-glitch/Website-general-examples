@@ -2,62 +2,140 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL;
 
-const concepts = [
+const directions = [
   {
-    title: 'Concept 1: Warm Minimal (Familiar)',
-    tag: 'Welcoming · Soft Rhythm · Clear Steps',
-    text: 'A family-friendly direction with gentle spacing, rounded cards, and clear first-time pathways designed to feel like a personal invitation.',
-    href: `${base}concept-1-familiar`
+    key: 'warm',
+    title: 'Warm / Grace-Filled',
+    summary: 'Soft, welcoming, and relational with calm pacing and approachable hierarchy.',
+    href: `${base}concept-1-familiar`,
+    catalogHref: `${base}website-strategy-catalog#warm-grace`
   },
   {
-    title: 'Concept 2: Editorial Grace (Elevated)',
-    tag: 'Editorial · Mission-Led · Premium',
-    text: 'A refined, serif-led composition with intentional whitespace and structured storytelling that feels polished while staying pastoral.',
-    href: `${base}concept-2-elevated`
+    key: 'grounded',
+    title: 'Grounded / Earth-Toned',
+    summary: 'Organic and steady, designed to communicate trust, depth, and thoughtful structure.',
+    href: `${base}concept-2-elevated`,
+    catalogHref: `${base}website-strategy-catalog#grounded-earth`
   },
   {
-    title: 'Concept 3: Raw Contrast (Bold)',
-    tag: 'High Contrast · Direct · Authentic',
-    text: 'A modern and confident direction driven by scale, contrast, and short direct language, with clear steps for people who want to act now.',
-    href: `${base}concept-3-bold`
+    key: 'contrast',
+    title: 'Raw Contrast / High Contrast Modern',
+    summary: 'Sharp contrast and assertive typography for clarity, confidence, and momentum.',
+    href: `${base}concept-3-bold`,
+    catalogHref: `${base}website-strategy-catalog#raw-contrast`
   }
 ];
 ---
 
 <BaseLayout
-  title="Limitless Church Homepage Concepts"
-  description="Three strategic homepage design directions for Limitless Church in Nixa, Missouri."
-  pageClass="concept-index"
+  title="Website Direction Showcase | Mission-Driven Homepage Concepts"
+  description="A brand-neutral showcase of homepage concept directions for churches, ministries, nonprofits, schools, and mission-driven organizations."
+  pageClass="showcase-home"
 >
-  <section class="selector-hero">
+  <section class="selector-hero showcase-intro">
     <div class="container">
-      <p class="eyebrow">Strategy Mockup · Limitless Church, Nixa MO</p>
-      <h1>Three Homepage Directions</h1>
+      <p class="eyebrow">Concept Showcase</p>
+      <h1>Homepage Direction Studies for Mission-Driven Organizations</h1>
       <span class="accent-bar"></span>
-      <p style="margin-top: 1.1rem;">
-        Each concept explores how structure, copy, and visual rhythm can communicate warmth and
-        belonging in a black, white, and neutral design system. The three directions differ in
-        flow, tone, density, and emotional posture through typography, spacing, and composition.
+      <p class="showcase-intro__lead">
+        Different organizations need different kinds of digital presence. Some websites need warmth and welcome.
+        Others need clarity and confidence. Others need stronger structure and next-step direction. This showcase
+        explores several possible paths.
+      </p>
+      <p class="showcase-intro__sub">
+        This is a strategy tool, not a live organization website. Each direction below demonstrates how tone,
+        layout, and emphasis change what people notice first.
       </p>
     </div>
   </section>
 
-  <section class="section" style="padding-top: 0;">
-    <div class="container selector-grid">
-      {concepts.map((concept) => (
-        <article class="concept-card">
-          <span class="concept-tag">{concept.tag}</span>
-          <h2>{concept.title}</h2>
-          <p>{concept.text}</p>
-          <a class="btn" href={concept.href}>View Concept</a>
+  <section class="section showcase-directions">
+    <div class="container direction-stack">
+      {directions.map((direction, index) => (
+        <article class:list={['direction-panel', `direction-panel--${direction.key}`]}>
+          <div class="direction-panel__copy">
+            <p class="eyebrow">Direction {String(index + 1).padStart(2, '0')}</p>
+            <h2>{direction.title}</h2>
+            <p>{direction.summary}</p>
+            <div class="cta-row">
+              <a class="btn" href={direction.href}>View This Direction</a>
+              <a class="btn btn-soft" href={direction.catalogHref}>See in Catalog</a>
+            </div>
+          </div>
+
+          <div class="direction-panel__preview" role="img" aria-label={`${direction.title} homepage concept panel`}>
+            {
+              direction.key === 'warm' && (
+                <>
+                  <div class="preview-strip preview-strip--soft"></div>
+                  <div class="preview-hero preview-hero--center">
+                    <p class="preview-eyebrow">Welcome First</p>
+                    <p class="preview-headline">You Are Welcome Here</p>
+                    <p class="preview-support">Calm hierarchy and supportive pathways for new visitors.</p>
+                  </div>
+                  <div class="preview-row preview-row--three">
+                    <div class="preview-card">Belong</div>
+                    <div class="preview-card">Grow</div>
+                    <div class="preview-card">Connect</div>
+                  </div>
+                </>
+              )
+            }
+
+            {
+              direction.key === 'grounded' && (
+                <>
+                  <div class="preview-split">
+                    <div class="preview-split__copy">
+                      <p class="preview-eyebrow">Steady Trust</p>
+                      <p class="preview-headline">A Presence Built for Long-Term Credibility</p>
+                      <p class="preview-support">Depth-oriented messaging with measured pacing.</p>
+                    </div>
+                    <div class="preview-split__surface" aria-hidden="true"></div>
+                  </div>
+                  <div class="preview-row preview-row--two">
+                    <div class="preview-card">Community Impact</div>
+                    <div class="preview-card">Ongoing Support</div>
+                  </div>
+                </>
+              )
+            }
+
+            {
+              direction.key === 'contrast' && (
+                <>
+                  <div class="preview-contrast-nav">
+                    <span>Mission</span><span>Action</span><span>Resources</span>
+                  </div>
+                  <div class="preview-hero preview-hero--left">
+                    <p class="preview-eyebrow">Clarity and Momentum</p>
+                    <p class="preview-headline">Lead With What Matters Most</p>
+                    <p class="preview-support">Message-first structure with direct conversion pathways.</p>
+                    <span class="preview-chip">Take a Next Step</span>
+                  </div>
+                </>
+              )
+            }
+          </div>
         </article>
       ))}
     </div>
+  </section>
 
-    <p class="container selector-note">
-      All three concepts are static, fast, and GitHub Pages friendly.
-      The church mission, to help people encounter God, love people, and find purpose, runs
-      through every direction, expressed differently by each one.
-    </p>
+  <section class="section showcase-handoff">
+    <div class="container">
+      <div class="cta-panel">
+        <p class="eyebrow">Next Layer</p>
+        <h2>Explore the Full Website Strategy Catalog</h2>
+        <p>
+          The catalog expands this view with additional directions, strategic metadata, and a decision framework
+          designed for discovery conversations.
+        </p>
+        <div class="cta-row">
+          <a class="btn" href={`${base}website-strategy-catalog`}>Open Strategy Catalog</a>
+          <a class="btn btn-soft" href={`${base}concept-1-familiar`}>Browse Direction Studies</a>
+        </div>
+      </div>
+    </div>
   </section>
 </BaseLayout>

@@ -1,0 +1,271 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StrategyBlock from '../components/catalog/StrategyBlock.astro';
+
+const framingPoints = [
+  'Welcome and reassurance',
+  'Trust and credibility',
+  'Action and momentum',
+  'Clarity and quick orientation',
+  'Story and emotional resonance',
+  'Content access for repeat visitors',
+  'Community depth and relationship pathways'
+];
+
+const strategies = [
+  {
+    id: 'warm-grace',
+    name: 'Warm / Grace-Filled',
+    summary: 'A relational direction that makes people feel safe, seen, and welcomed quickly.',
+    emphasis: 'Soft surfaces, generous spacing, and invitational copy lower anxiety for first-time visitors.',
+    idealUse: 'Best when reassurance, belonging, and human tone are more important than aggressive conversion.',
+    tone: 'Warm, calm, relational',
+    bestFit: 'Organizations serving many first-time or uncertain visitors',
+    heroApproach: 'Welcoming headline with supportive secondary actions',
+    ctaStyle: 'Gentle and confidence-building',
+    visualFeel: 'Soft, open, and approachable',
+    previewPattern: 'airy',
+    previewHeadline: 'You Are Welcome Here',
+    previewSupport: 'A calm, supportive structure that prioritizes emotional clarity.',
+    toneClass: 'airy',
+    ctaLabel: 'Pattern CTA: Learn More'
+  },
+  {
+    id: 'grounded-earth',
+    name: 'Grounded / Earth-Toned',
+    summary: 'A steady, trustworthy direction with more weight, depth, and compositional maturity.',
+    emphasis: 'Earth-influenced tones and layered sections reinforce reliability and long-term presence.',
+    idealUse: 'Best when trust, steadiness, and thoughtful communication are central to the organization.',
+    tone: 'Grounded, thoughtful, steady',
+    bestFit: 'Teams emphasizing credibility, care, and continuity',
+    heroApproach: 'Narrative-led split hero with contextual support',
+    ctaStyle: 'Guided and contextual',
+    visualFeel: 'Warm depth, restrained rhythm, stable hierarchy',
+    previewPattern: 'earth',
+    previewHeadline: 'Helping People Find Hope and Community',
+    previewSupport: 'Built to convey trust over time, not flash in the first second.',
+    toneClass: 'earth',
+    ctaLabel: 'Pattern CTA: Explore Support Paths'
+  },
+  {
+    id: 'raw-contrast',
+    name: 'Raw Contrast / High Contrast Modern',
+    summary: 'A sharp, modern direction where message hierarchy and action pathways are unmistakable.',
+    emphasis: 'High contrast, minimal noise, and assertive typography create rapid comprehension.',
+    idealUse: 'Best when the site must feel clear, confident, modern, and immediately actionable.',
+    tone: 'Direct, confident, modern',
+    bestFit: 'Organizations prioritizing clarity and momentum',
+    heroApproach: 'Typography-led, message-first hero',
+    ctaStyle: 'Focused and explicit',
+    visualFeel: 'Crisp, bold, high-contrast',
+    previewPattern: 'high-contrast',
+    previewHeadline: 'Lead With What Matters Most',
+    previewSupport: 'Direct hierarchy that points visitors to the right next step fast.',
+    toneClass: 'contrast',
+    ctaLabel: 'Pattern CTA: Start Here'
+  },
+  {
+    id: 'light-airy',
+    name: 'Light and Airy',
+    summary: 'A bright, balanced direction with open breathing room and gentle visual rhythm.',
+    emphasis: 'Whitespace and soft neutrals keep the page clear while maintaining warmth and polish.',
+    idealUse: 'Best for teams wanting accessibility and welcome without heavy emotional framing.',
+    tone: 'Clear, calm, balanced',
+    bestFit: 'Organizations needing an approachable but polished baseline',
+    heroApproach: 'Open hero with concise supporting context',
+    ctaStyle: 'Invitational with low pressure',
+    visualFeel: 'Lightweight, breathable, refined',
+    previewPattern: 'airy',
+    previewHeadline: 'Clarity Without Coldness',
+    previewSupport: 'A balanced layout for organizations that need warmth and precision together.',
+    toneClass: 'airy',
+    ctaLabel: 'Pattern CTA: See Overview'
+  },
+  {
+    id: 'bold-mission',
+    name: 'Bold Mission Forward',
+    summary: 'A mission-first direction designed to increase momentum and emphasize immediate action.',
+    emphasis: 'Large statements, strong pathways, and high-visibility CTAs reduce hesitation.',
+    idealUse: 'Best when campaigns, enrollment, participation, or action goals are primary.',
+    tone: 'Energetic, directional, decisive',
+    bestFit: 'Teams needing stronger conversion and movement',
+    heroApproach: 'Large left-aligned mission statement',
+    ctaStyle: 'Prominent, action-focused',
+    visualFeel: 'Forward, high-energy, directional',
+    previewPattern: 'mission',
+    previewHeadline: 'Find Your Next Step Today',
+    previewSupport: 'Built to move visitors from interest to action with less friction.',
+    toneClass: 'mission',
+    ctaLabel: 'Pattern CTA: Take Action'
+  },
+  {
+    id: 'story-driven',
+    name: 'Story-Driven',
+    summary: 'A narrative direction that helps visitors connect emotionally before they evaluate details.',
+    emphasis: 'The page unfolds in chapters, using meaning and context to build trust progressively.',
+    idealUse: 'Best when transformation stories, mission narrative, or lived impact are central to positioning.',
+    tone: 'Reflective, human, emotional',
+    bestFit: 'Teams whose credibility is strengthened by story depth',
+    heroApproach: 'Narrative hero leading into chaptered sections',
+    ctaStyle: 'Contextual and progressive',
+    visualFeel: 'Editorial flow with emotional continuity',
+    previewPattern: 'story',
+    previewHeadline: 'Every Journey Starts Somewhere',
+    previewSupport: 'Story architecture that gradually leads people toward trust and action.',
+    toneClass: 'story',
+    ctaLabel: 'Pattern CTA: Read the Story'
+  },
+  {
+    id: 'resource-hub',
+    name: 'Resource / Content Hub',
+    summary: 'A utility-first direction designed for repeat visitors who need fast access to content.',
+    emphasis: 'Structured navigation and content modules help people find updates quickly and reliably.',
+    idealUse: 'Best when recurring resources, events, education, and updates are core website value.',
+    tone: 'Practical, organized, dependable',
+    bestFit: 'Organizations with frequent publishing and repeat visitors',
+    heroApproach: 'Utility-led intro with high-value shortcuts',
+    ctaStyle: 'Pathway-based by intent',
+    visualFeel: 'Structured grid, clear scanning, repeat-use friendly',
+    previewPattern: 'hub',
+    previewHeadline: 'Resources and Updates in One Place',
+    previewSupport: 'Information architecture designed for speed and return visits.',
+    toneClass: 'hub',
+    ctaLabel: 'Pattern CTA: Browse Resources'
+  }
+] as const;
+
+const decisionRows = [
+  {
+    need: 'Visitors need reassurance before details',
+    direction: 'Warm / Grace-Filled',
+    reason: 'Starts with belonging cues and low-pressure next steps.'
+  },
+  {
+    need: 'Trust and steadiness matter most',
+    direction: 'Grounded / Earth-Toned',
+    reason: 'Uses stable rhythm, mature surfaces, and contextual hierarchy.'
+  },
+  {
+    need: 'Clarity and confidence must be immediate',
+    direction: 'Raw Contrast / High Contrast Modern',
+    reason: 'High-contrast typography and strong hierarchy accelerate understanding.'
+  },
+  {
+    need: 'A balanced, broadly accessible feel',
+    direction: 'Light and Airy',
+    reason: 'Maintains polish while feeling open, calm, and easy to navigate.'
+  },
+  {
+    need: 'The goal is stronger momentum and next-step action',
+    direction: 'Bold Mission Forward',
+    reason: 'Direct language and prominent CTAs reduce hesitation.'
+  },
+  {
+    need: 'Story and emotional connection should lead',
+    direction: 'Story-Driven',
+    reason: 'Narrative flow builds trust before asking for commitment.'
+  },
+  {
+    need: 'Repeat visitors need fast content access',
+    direction: 'Resource / Content Hub',
+    reason: 'Structured pathways prioritize findability and frequent return use.'
+  }
+];
+---
+
+<BaseLayout
+  title="Website Strategy Catalog | Strategic Directions for Mission-Driven Sites"
+  description="A catalog of website strategy directions for churches, ministries, nonprofits, schools, and other mission-driven organizations."
+  pageClass="strategy-catalog"
+>
+  <section class="selector-hero strategy-hero">
+    <div class="container">
+      <p class="eyebrow">Strategic Catalog</p>
+      <h1>Website Strategy Catalog</h1>
+      <span class="accent-bar"></span>
+      <p class="strategy-hero__lead">
+        Different website directions communicate different priorities. Some lead with welcome, some with trust,
+        others with speed, action, or content access. This catalog is designed to help teams compare those choices
+        intentionally.
+      </p>
+    </div>
+  </section>
+
+  <section class="section strategy-framing" style="padding-top: 0;">
+    <div class="container strategy-framing-shell">
+      <div class="section-heading">
+        <h2>What Your Homepage Can Lead With</h2>
+        <p>
+          Websites for ministries, nonprofits, schools, and mission-driven organizations do not all need the same
+          visual voice. Direction should follow audience need, not trend.
+        </p>
+      </div>
+      <div class="strategy-overview-grid">
+        {framingPoints.map((item) => (
+          <article class="strategy-overview-item">
+            <h3>{item}</h3>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section strategy-catalog-section">
+    <div class="container">
+      <div class="section-heading" style="margin-bottom: 1.4rem;">
+        <h2>Strategy Gallery</h2>
+        <p>Each direction below combines positioning logic with a stylized homepage composition.</p>
+      </div>
+      <div class="strategy-stack">
+        {strategies.map((strategy, idx) => (
+          <StrategyBlock index={idx + 1} {...strategy} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="decision-framework" class="section strategy-framework">
+    <div class="container strategy-framework-shell">
+      <div class="strategy-framework-header">
+        <p class="eyebrow">Decision Framework</p>
+        <h2>Choosing a Direction</h2>
+        <p>
+          Start with what people need first when they land on the homepage, then match the direction to that primary
+          need.
+        </p>
+      </div>
+
+      <div class="strategy-matrix" role="table" aria-label="Website direction decision matrix">
+        <div class="strategy-matrix__head" role="row">
+          <span role="columnheader">If people need...</span>
+          <span role="columnheader">Start with...</span>
+          <span role="columnheader">Why this works</span>
+        </div>
+        {decisionRows.map((row) => (
+          <div class="strategy-matrix__row" role="row">
+            <span role="cell">{row.need}</span>
+            <span role="cell"><strong>{row.direction}</strong></span>
+            <span role="cell">{row.reason}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section strategy-cta">
+    <div class="container">
+      <div class="cta-panel strategy-cta-panel">
+        <p class="eyebrow">Next Conversation</p>
+        <h2>Need Help Narrowing to the Right Direction?</h2>
+        <p>
+          Use this catalog to align tone, structure, and action strategy before design execution. The goal is not to
+          pick a style you like; it is to choose the experience your audience needs first.
+        </p>
+        <div class="cta-row">
+          <a class="btn" href="#">Start a Strategy Discussion</a>
+          <a class="btn btn-soft" href={`${import.meta.env.BASE_URL}`}>Return to Overview</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

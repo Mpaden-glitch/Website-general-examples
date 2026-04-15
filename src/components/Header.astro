@@ -2,31 +2,39 @@
 interface Props {
   showConceptSwitcher?: boolean;
   activeConcept?: 'familiar' | 'elevated' | 'bold';
+  variant?: 'default' | 'neutral';
 }
 
 const { showConceptSwitcher = false, activeConcept } = Astro.props;
 const base = import.meta.env.BASE_URL;
+const foundationMileHref = import.meta.env.PUBLIC_FOUNDATION_MILE_URL || 'https://foundationalmile.com/';
 
 const navLinks = [
   { label: 'Home', href: base },
-  { label: 'About', href: '#' },
-  { label: 'Ministries', href: '#' },
-  { label: 'Messages', href: '#' },
-  { label: 'Plan Your Visit', href: '#' }
+  { label: 'Website Catalog', href: `${base}website-strategy-catalog` },
+  { label: 'Direction Studies', href: `${base}concept-1-familiar` },
+  { label: 'Method', href: '#' }
 ];
 
 const conceptLinks = [
-  { key: 'familiar', label: 'Concept 1: Familiar', href: `${base}concept-1-familiar` },
-  { key: 'elevated', label: 'Concept 2: Elevated', href: `${base}concept-2-elevated` },
-  { key: 'bold', label: 'Concept 3: Bold', href: `${base}concept-3-bold` }
+  { key: 'familiar', label: 'Warm / Grace-Filled', href: `${base}concept-1-familiar` },
+  { key: 'elevated', label: 'Grounded / Earth-Toned', href: `${base}concept-2-elevated` },
+  { key: 'bold', label: 'Raw Contrast / Modern', href: `${base}concept-3-bold` }
 ];
 ---
 
 <header class="site-header">
+  <div class="header-return-wrap">
+    <div class="container header-return">
+      <span>Viewing the Website Strategy Showcase</span>
+      <a class="btn btn-soft header-return-btn" href={foundationMileHref}>Back to Foundation Mile</a>
+    </div>
+  </div>
+
   <div class="container header-inner">
-    <a class="brand" href={base} aria-label="Limitless Church concepts home">
-      <span class="brand-mark" aria-hidden="true">LC</span>
-      <span>Limitless Church</span>
+    <a class="brand" href={base} aria-label="Mission-driven website strategy showcase home">
+      <span class="brand-mark" aria-hidden="true">WS</span>
+      <span>Website Strategy Showcase</span>
     </a>
 
     <nav class="main-nav" aria-label="Main navigation">
@@ -35,13 +43,13 @@ const conceptLinks = [
       ))}
     </nav>
 
-    <a class="btn btn-soft header-cta" href="#">Plan Your Visit</a>
+    <a class="btn btn-soft header-cta" href="#">Start with Strategy</a>
   </div>
 
   {
     showConceptSwitcher && (
       <div class="concept-switcher-wrap">
-        <div class="container concept-switcher" role="navigation" aria-label="Concept pages">
+        <div class="container concept-switcher" role="navigation" aria-label="Direction studies">
           {conceptLinks.map((concept) => (
             <a
               href={concept.href}
